@@ -1,27 +1,27 @@
 * simcal.py
-A script to generate a printable, simple and global monthly calendar
+A python script to generate a simple and printable monthly calendar with holidays of your region
 
 ** Overview
 - Generate a PDF file of monthly calenar
   - A page for a month, 12 pages in total
 - Can choose which weekday to start (eg, Sunday or Monday)
-- Can show holidays of your chosen country
-- Can choose not to show the 1st week in favor of wider spaces
+- Can show holidays of your country
+- Can choose not to show the 1st week in favor of wider spaces if the month has six week rows
 [[./jan2023.jpg]]
 
 ** Usage
-1. Install python 3.8 or later
-2. Install prerequisites
+- Install python 3.8 or later
+- Install prerequisites
 #+begin_src 
 pip install holidays
 pip install reportlab
 #+end_src
-3. Edit config parameters in simcal.py
-4. Run the script
+- Edit config parameters in simcal.py
+- Run the script
 #+begin_src 
 python simcal.py
 #+end_src
-5. PDF file is generated for you to print: =cal<year>.pdf=
+- PDF file is generated for you to print: =cal<year>.pdf=
 
 ** Configuration
 Edit =simcal.py= with your editor and save it.
@@ -31,9 +31,9 @@ You can configure:
   - 0: Monday, 1: Tuesday, 2: Wednesday, ... 6: Sunday
 - =holiday_region=: Which country's holidays to put
   - 'JP': Japan, 'US': USA, 'GB': UK, 'IN': India, 'CA': Canada, etc.
-  - You can choose any country that are supported by [[https://pypi.org/project/holidays/][holidays library]]
+  - You can choose any country that is supported by [[https://pypi.org/project/holidays/][holidays library]]
 - =remove_1wk=: If the month has 6 week rows, remove the 1st week (=True=) or not (=False=); Because:
-  - you might want bigger space to write to
+  - you might want wider spaces to write to
   - spaces for removed days are shown in the previous month, anyway;-)
 - =pagesize=: either 0 (A4) or 1 (US letter)
 
