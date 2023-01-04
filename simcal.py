@@ -8,9 +8,9 @@ from reportlab.lib.pagesizes import A4, letter, landscape
 
 # Config parameters
 year = 2023
-start_weekday = 0  # 1st day of week; 0: Monday, 6: Sunday
-holiday_region = 'JP'  # 'None': other, 'US': USA, 'JP': Japan, etc.
-remove_1wk = True  # Remove 1st week if the month consumes 6 week rows
+start_weekday = 6  # 1st day of week; 0: Monday, 6: Sunday
+holiday_region = 'DE'  # 'None': other, 'US': USA, 'JP': Japan, etc.
+remove_1wk = False  # Remove 1st week if the month consumes 6 week rows
 pagesize = 0  # 0: A4, 1: Letter
 
 efont = "Helvetica"
@@ -23,12 +23,10 @@ if holiday_region:
 pagesizes = [A4, letter]
 height, width = pagesizes[pagesize]
 cell_width = (width - 48)/7
-if pagesize == 1:  # letter
-    cell_width += 6
 
 calendar.setfirstweekday(start_weekday)
 
-canvas = Canvas(fileName, pagesize=landscape(A4))
+canvas = Canvas(fileName, pagesize=landscape(pagesizes[pagesize]))
 canvas.setTitle(str(year))
 
 pdfmetrics.registerFont(UnicodeCIDFont(jfont))
