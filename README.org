@@ -32,6 +32,8 @@ You can configure:
 - =holiday_region=: Which country's holidays to put
   - 'JP': Japan, 'US': USA, 'GB': UK, 'IN': India, 'CA': Canada, etc.
   - You can choose any country that is supported by [[https://pypi.org/project/holidays/][holidays library]]
+- =holiday_lang=: The language which the returned holiday names will be translated into. It must be an ISO 639-1 (2-letter) language code.
+  - 'ja': Japanese, 'en': English, etc.
 - =remove_1wk=: If the month has 6 week rows, remove the 1st week (=True=) or not (=False=); Because:
   - you might want wider spaces to write to
   - spaces for removed days are shown in the previous month, anyway;-)
